@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Data.Model;
 
-namespace Client.RO
+namespace TibberClient
 {
     public class ResponseType
     {

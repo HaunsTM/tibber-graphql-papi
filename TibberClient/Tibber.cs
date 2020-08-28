@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.Net.Http.Headers;
 using System.Net.Http;
-using Client.RO;
 using GraphQL;
 
 // This example uses https://github.com/graphql-dotnet/graphql-client
@@ -12,7 +11,7 @@ using GraphQL;
 using GraphQL.Client.Http;
 using GraphQL.Client.Serializer.Newtonsoft;
 
-namespace Client
+namespace TibberClient
 {
     public class Tibber
     {
@@ -47,13 +46,17 @@ namespace Client
             }
         }
 
-        public GraphQLRequest PriceListRequest(string homeId)
+        private GraphQLRequest PriceListRequest(string homeId)
         {
             var priceListQuery =
                 "query {" +
                 "  viewer {" +
+                "     userId" +
+                "     name" +
                 "     home(id: \"" + homeId + "\") {" +
+                "      id" +
                 "      subscriptions {" +
+                "        id" +
                 "        priceInfo" +
                 "         {" +
                 "          today {" +
@@ -79,15 +82,11 @@ namespace Client
            // Send the request and store the response as an OrderResponse object
            try
            {
-
-               var asdf = await this.AuthorizedGraphQLClient.SendQueryAsync<Object>(priceListRequest);
-
                var graphQLResponse = await this.AuthorizedGraphQLClient.SendQueryAsync<ResponseType>(priceListRequest);
                 return graphQLResponse;
             }
            catch (Exception e)
            {
-               Console.WriteLine(e);
                throw;
            }
 

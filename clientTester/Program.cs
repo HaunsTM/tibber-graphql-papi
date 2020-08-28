@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using Client;
+using TibberClient;
 
 namespace clientTester
 {
@@ -14,9 +14,13 @@ namespace clientTester
         {
             var authorizationToken = "jJWV5qrjvwTKGlKbmmxCKyBhYmn7E4StfWsGjBPNNHw";
             var homeId = "0e738d0f-7ab3-4e39-b0b8-788b6ad2ba26";
-            var c = new Client.Tibber(authorizationToken);
+            var c = new Tibber(authorizationToken);
             var result = await c.GetPriceListAsync(homeId);
-
+            var viewerResult = result.Data.viewer;
+            var access = new SQLite.Access();
+            var setup = new SQLite.Setup();
+            //setup.CreateDatabase();
+            access.InsertPrices(viewerResult);
             Console.ReadLine();
         }
     }
