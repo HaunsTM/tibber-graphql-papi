@@ -1,10 +1,11 @@
-﻿using Data.Model;
+﻿using System.Threading.Tasks;
+using Data.Model;
 
 namespace Data.Repository
 {
     public interface IAccess
     {
-        void InsertPrices(Viewer viewerResult);
+        Task InsertViewerResultAsync(Viewer viewerResult);
         PriceInfo GetPrices();
     }
 }

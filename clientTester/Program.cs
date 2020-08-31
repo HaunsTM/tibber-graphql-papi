@@ -20,7 +20,7 @@ namespace clientTester
             var access = new SQLite.Access();
             var setup = new SQLite.Setup();
             //setup.CreateDatabase();
-            access.InsertPrices(viewerResult);
+            await access.InsertViewerResultAsync(viewerResult);
             Console.ReadLine();
         }
     }
