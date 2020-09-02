@@ -13,11 +13,13 @@ namespace SQLite
         {
             using (var context = new SQLiteContext())
             {
-                var currentPrice = await context.Prices.FirstOrDefaultAsync(p => p == price);
+                var priceFoundInDatabase = await context.Prices.FirstOrDefaultAsync(p => p.startsAt == price.startsAt);
+                var currentPriceIsMissingInDatabase
+                    = priceFoundInDatabase is null;
 
-                if (currentPrice == null)
+                if (currentPriceIsMissingInDatabase)
                 {
-                    await context.Prices.AddAsync(currentPrice);
+                    await context.Prices.AddAsync(price);
                     await context.SaveChangesAsync();
                 }
             }
