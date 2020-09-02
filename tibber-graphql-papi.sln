@@ -11,7 +11,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TibberClient", "TibberClien
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{C8FCF30B-6CC0-49A5-A47E-EBB5890428FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SQLite", "SQLite\SQLite.csproj", "{212174BC-28C1-405D-B81C-F5D251C8E925}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SQLite", "SQLite\SQLite.csproj", "{212174BC-28C1-405D-B81C-F5D251C8E925}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FakeHub", "FakeHub\FakeHub.csproj", "{1225EA8B-5BB0-49CE-ABE8-0658246534C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{212174BC-28C1-405D-B81C-F5D251C8E925}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{212174BC-28C1-405D-B81C-F5D251C8E925}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{212174BC-28C1-405D-B81C-F5D251C8E925}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1225EA8B-5BB0-49CE-ABE8-0658246534C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1225EA8B-5BB0-49CE-ABE8-0658246534C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1225EA8B-5BB0-49CE-ABE8-0658246534C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1225EA8B-5BB0-49CE-ABE8-0658246534C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

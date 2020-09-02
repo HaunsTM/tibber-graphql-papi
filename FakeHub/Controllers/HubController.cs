@@ -15,7 +15,8 @@ namespace FakeHub.Controllers
         [HttpGet]
         public string TakeAction(string device, string actionToPerform)
         {
-            var message = $"An action call {actionToPerform} were sent to {device}.";
+            var message = $"{DateTime.Now} *FAKE HUB: * An action call [{actionToPerform}] were sent to device [{device}].";
+            Console.WriteLine(message);
             return message;
         }
     }

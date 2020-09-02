@@ -13,6 +13,7 @@ namespace FakeHub
     {
         public static void Main(string[] args)
         {
+            Console.WriteLine("Fake Hub is started...");
             CreateHostBuilder(args).Build().Run();
         }
 
